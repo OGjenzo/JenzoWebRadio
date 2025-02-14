@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRadio</title>
+</head>
+<body>
+    <h1>WebRadio</h1>
+    <ul>
+        {% for stream in streams %}
+            <li>
+                <h3>{{ stream.name }}</h3>
+                <p>{{ stream.description }}</p>
+                <audio controls>
+                    <source src="{{ stream.url }}" type="audio/mpeg">
+                    Your browser does not support the audio tag.
+                </audio>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
